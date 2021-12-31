@@ -5,7 +5,7 @@ import TrashBin from '../resources/trash.svg'
 
 import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import {BinCollectionFlat, CollectionType} from 'bins/bins.types'
-import BinsService, {binServiceFactory} from 'bins/bins.service'
+import BinsFactory from '../bins/bins.factory'
 
 interface HomeProps {
   next: BinCollectionFlat
@@ -49,7 +49,7 @@ const Home = (props: HomePageProps) => {
         <meta name="description" content="When is my bin being collected next?" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col my-4 w-96 mx-auto">
+      <main className="flex flex-col mx-auto my-4 w-96">
         <section className="text-center">
           <BinCountdown days={props.next.collectionDate} />
           <h2><BinType binType={props.next.binType} /> is being collected</h2>
@@ -66,10 +66,10 @@ const Home = (props: HomePageProps) => {
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const binsService = binServiceFactory()
+  const binsService = BinsFactory.getService()
   return {
     props: {
-      next: BinsService.serializeBins(binsService.findNext()),
+      next: binsService.serializeBins(binsService.findNext()),
     }
   }
 }

@@ -1,7 +1,7 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-import {binServiceFactory} from '../../bins/bins.service'
+import BinsFactory from 'bins/bins.factory'
 
-const binsService = binServiceFactory()
+const binsService = BinsFactory.getService()
 
 // todo: create controller class
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -10,10 +10,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.send(`${req.method} not implemented`)
     return
   }
-  const url = new URL(req.url)
-  if (url.searchParams.has('m')) {
+  if (Object.keys(req.query).length >= 1) {
     res.status(405)
-    res.send('Not yet implemented by month')
+    res.send('Not yet implemented params')
     return
   }
 

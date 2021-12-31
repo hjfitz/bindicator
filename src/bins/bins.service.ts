@@ -13,7 +13,7 @@ export default class BinService {
 		})
 	}
 	
-	static serializeBins(bins: InitialisedBinCollection): BinCollectionFlat {
+	serializeBins(bins: InitialisedBinCollection): BinCollectionFlat {
 		return JSON.parse(JSON.stringify(bins)) as BinCollectionFlat
 	}
 
