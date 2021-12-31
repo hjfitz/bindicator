@@ -6,6 +6,7 @@
   "author": "harry <hjfitz@protonmail.ch>",
   "license": "MIT",
   "scripts": {
+    "build:prod": "next build && next export",
     "dev": "next dev",
     "start": "next"
   },
