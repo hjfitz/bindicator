@@ -1,8 +1,8 @@
 import BinsFactory from 'bins/bins.factory'
 import type {NextApiRequest, NextApiResponse} from 'next'
 
-const binsService = BinsFactory.getService()
+const binsController = BinsFactory.getController()
 
-export default function handler(_: NextApiRequest, res: NextApiResponse) {
-  res.json(binsService.findNext())
+export default function handleGetNext(req: NextApiRequest, res: NextApiResponse) {
+  binsController.getNext(req, res)
 }
