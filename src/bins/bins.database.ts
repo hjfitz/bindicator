@@ -1,6 +1,10 @@
-import {AdditionalCollections, Bin, CollectionType} from './bins.types'
+import {
+	AdditionalCollections, 
+	BinCollectionFlat, 
+	CollectionType
+} from 'bins/bins.types'
 
-const collectionDates: Bin[] = [
+const collectionDates: BinCollectionFlat[] = [
 	{
 		collectionDate: '2021-12-28',
 		binType: CollectionType.Waste,

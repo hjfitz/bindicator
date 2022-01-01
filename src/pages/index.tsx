@@ -1,11 +1,12 @@
+import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import Head from 'next/head'
+
 import formatDistance from 'date-fns/formatDistanceToNow'
 import differenceInDays from 'date-fns/differenceInDays'
-import TrashBin from '../resources/trash.svg'
 
-import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import {BinCollectionFlat, CollectionType} from 'bins/bins.types'
-import BinsFactory from '../bins/bins.factory'
+import BinsFactory from 'bins/bins.factory'
+import TrashBin from 'resources/trash.svg'
 
 interface HomeProps {
   next: BinCollectionFlat

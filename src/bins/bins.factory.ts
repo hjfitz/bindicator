@@ -1,6 +1,6 @@
-import BinsController from './bins.controller'
-import BinsService from './bins.service'
-import BinsRepository from './bins.repository'
+import BinsController from 'bins/bins.controller'
+import BinsService from 'bins/bins.service'
+import BinsRepository from 'bins/bins.repository'
 
 export default class BinsFactory {
 	private static binsService: BinsService

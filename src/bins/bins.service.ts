@@ -1,5 +1,8 @@
-import BinsRepository from './bins.repository'
-import type {BinCollectionFlat, InitialisedBinCollection} from './bins.types'
+import BinsRepository from 'bins/bins.repository'
+import type {
+	BinCollectionFlat, 
+	InitialisedBinCollection
+} from 'bins/bins.types'
 
 export default class BinService {
 	constructor(private readonly binsRepository: BinsRepository) {}

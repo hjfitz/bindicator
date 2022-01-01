@@ -1,5 +1,5 @@
-import db from './bins.database'
-import type {BinCollectionFlat} from './bins.types'
+import db from 'bins/bins.database'
+import type {BinCollectionFlat} from 'bins/bins.types'
 
 export default class BinRepository {
 	private readonly database = db
