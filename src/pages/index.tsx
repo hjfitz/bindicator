@@ -42,7 +42,6 @@ const BinCountdown = ({days}: {days: string}) => {
 type HomePageProps = InferGetServerSidePropsType<typeof getServerSideProps>
 
 const Home = (props: HomePageProps) => {
-
 	return (
 		<>
 			<Head>
@@ -50,7 +49,8 @@ const Home = (props: HomePageProps) => {
 				<meta name="description" content="When is my bin being collected next?" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="flex flex-col mx-auto my-4 w-96">
+			<main className="h-full min-h-screen dark:bg-slate-900 dark:text-slate-200">
+				<div className="flex flex-col py-4 mx-auto w-96">
 				<section className="text-center">
 					<BinCountdown days={props.next.collectionDate} />
 					<h2><BinType binType={props.next.binType} /> is being collected</h2>
@@ -58,9 +58,10 @@ const Home = (props: HomePageProps) => {
 						<h2>Dont forget to put out {props.next.additionalCollection}!</h2>
 					)}
 				</section>
-				<section className="my-4">
+					<section className="my-4 dark:invert">
 					<TrashBin binType={props.next.binType} className="mx-auto" />
 				</section>
+				</div>
 			</main>
 		</>
 	)
