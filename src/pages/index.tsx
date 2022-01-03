@@ -1,3 +1,4 @@
+import React from 'react'
 import {GetServerSideProps, InferGetServerSidePropsType} from 'next'
 
 import {BinCollectionFlat} from 'bins/bins.types'
