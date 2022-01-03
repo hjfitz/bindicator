@@ -7,6 +7,9 @@ export default class BinsFactory {
 	private static binsController: BinsController
 	private static binsRepository: BinsRepository
 
+	/* istanbul ignore next */
+	private constructor() {}
+
 	private static getRepository(): BinsRepository {
 		if (!BinsFactory.binsRepository) {
 			const repo = new BinsRepository()

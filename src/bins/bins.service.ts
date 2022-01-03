@@ -44,8 +44,3 @@ export default class BinService {
 	}
 }
 
-export function binServiceFactory() {
-	const binsRepository = new BinsRepository()
-	return new BinService(binsRepository)
-}
-
