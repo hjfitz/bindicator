@@ -1,5 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-import {AdditionalCollections, CollectionType, InitialisedBinCollection} from 'bins/bins.types'
+import {AdditionalCollections, CollectionType} from 'bins/bins.types'
 
 import BinsController from 'bins/bins.controller'
 import BinsService from 'bins/bins.service'
@@ -20,15 +20,7 @@ describe('BinsController', () => {
 		controller = new BinsController(service)
 		jsonMock.mockReset()
 	})
-	beforeAll(() => {
-		jest.useFakeTimers()
-		const testDate = new Date('2022-01-01')
-		jest.setSystemTime(testDate)
-	})
 
-	afterAll(() => {
-		jest.useRealTimers()
-	})
 	describe('getNext', () => {
 		it('should send the next date', () => {
 			controller.getNext({method: 'GET'} as unknown as NextApiRequest, res)

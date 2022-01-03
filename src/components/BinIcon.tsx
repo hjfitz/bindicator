@@ -6,7 +6,7 @@ export interface TrashProps {
 	binType: CollectionType
 }
 
-const bins = {
+export const bins = {
 	[CollectionType.Waste]: {
 		url: '/rubbish.png',
 		alt: 'A rubbish bin',

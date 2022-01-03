@@ -8,18 +8,6 @@ describe('Bin Repository', () => {
 		value: db
 	})
 	describe('findByMonth', () => {
-
-		beforeAll(() => {
-			jest.useFakeTimers()
-
-			const testDate = new Date('2022-01-01')
-			jest.setSystemTime(testDate)
-		})
-
-		afterAll(() => {
-			jest.useRealTimers()
-		})
-
 		it('should fetch the next one by month number', () => {
 			const jan = repository.findByMonthAbstract(1)
 			expect(jan).toHaveLength(3)
