@@ -9,7 +9,8 @@
     "build:prod": "next build && next export",
     "dev": "next dev",
     "start": "next",
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watch --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",

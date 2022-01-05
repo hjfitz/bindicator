@@ -9,6 +9,7 @@ describe('BinCountdown', () => {
 		jest.setSystemTime(testDate)
 		component = mount(<BinCountdown days="2022-01-03" />)
 	})
+
 	it('should render', () => {
 		expect(component.exists()).toBe(true)
 	})
