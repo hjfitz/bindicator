@@ -4,3 +4,5 @@ beforeEach(() => {
 		jest.setSystemTime(testDate)
 })
 
+// make ts happy
+export {}
